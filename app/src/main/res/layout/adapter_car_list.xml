@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootAdapterCarItem"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="4dp"
+    android:elevation="4dp"
+    android:paddingTop="12dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="12dp"
+    android:background="@drawable/bg_car_list_item">
+
+    <ImageView
+        android:id="@+id/ivAdapterCarIcon"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_car_placeholder"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvAdapterCarName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ivAdapterCarIcon"
+        app:layout_constraintStart_toEndOf="@id/ivAdapterCarIcon"
+        app:layout_constraintEnd_toStartOf="@id/tvAdapterCarModel"
+        app:layout_constraintBottom_toTopOf="@id/tvAdapterCarDetails"
+        android:textColor="@color/carItemTitleColor"
+        android:textSize="14sp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/roboto_bold"/>
+
+    <TextView
+        android:id="@+id/tvAdapterCarModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tvAdapterCarName"
+        app:layout_constraintBottom_toBottomOf="@id/tvAdapterCarName"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:layout_marginStart="6dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="4dp"
+        android:fontFamily="@font/roboto_medium"
+        android:background="@drawable/bg_car_list_badge"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        app:constraint_referenced_ids="tvAdapterCarName, tvAdapterCarModel"
+        app:barrierDirection="bottom"/>
+
+    <TextView
+        android:id="@+id/tvAdapterCarDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/barrier"
+        app:layout_constraintBottom_toBottomOf="@id/ivAdapterCarIcon"
+        app:layout_constraintStart_toStartOf="@id/tvAdapterCarName"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="6dp"
+        android:alpha="0.6"
+        android:gravity="start"
+        android:textColor="@color/carItemTitleColor"
+        android:textSize="11sp"
+        android:fontFamily="@font/roboto_regular"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
